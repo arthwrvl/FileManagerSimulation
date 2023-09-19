@@ -4,6 +4,8 @@ public class Main {
         disk.createFile("Arapiraca");
         disk.createFile("Alagoas");
         disk.deleteFile("Arapiraca");
+        disk.createFile("Major Izidoro");
         disk.seeFiles();
+        disk.debugFiles();
     }
 }

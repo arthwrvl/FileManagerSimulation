@@ -32,7 +32,7 @@ public class Disk {
         int dataIndex = 0;
         Node current = null;
         boolean fileExists = false;
-        ArrayList<Integer> filePointers = new ArrayList<>();;
+        ArrayList<Integer> filePointers = new ArrayList<>();
         for(int i = 0; i < nodes.length; i++){
             if(nodes[i] == null){
                 continue;
@@ -68,18 +68,18 @@ public class Disk {
     public void seeFiles(){
         for(int i = 0; i < nodes.length; i++){
             if(nodes[i] != null){
-                System.out.println(i + " " + nodes[i].data);
+                System.out.printf("%02d %c\n", i, nodes[i].data);
             }else{
-                System.out.println(i + " " + "-");
+                System.out.printf("%02d -\n", i);
             }
         }
     }
-    public void DebugFiles(){
+    public void debugFiles(){
         for(int i = 0; i < nodes.length; i++){
             if(nodes[i] != null){
-                System.out.println(i + " " + nodes[i].data + " pointing to: " + nodes[i].next);
+                System.out.printf("%02d %c pointing to %02d\n", i, nodes[i].data, nodes[i].next);
             }else{
-                System.out.println(i + " " + "-");
+                System.out.printf("%02d -\n", i);
             }
         }
     }
