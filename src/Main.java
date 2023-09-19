@@ -3,6 +3,7 @@ public class Main {
         Disk disk = new Disk(32);
         disk.createFile("Arapiraca");
         disk.createFile("Alagoas");
+        disk.deleteFile("Arapiraca");
         disk.seeFiles();
     }
 }

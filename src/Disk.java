@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Disk {
     private Node nodes[];
     private int freeSpace = 0;
@@ -25,6 +27,42 @@ public class Disk {
         }else{
             System.out.println("Não há espaço livre no disco");
         }
+    }
+    public void deleteFile(String file){
+        int dataIndex = 0;
+        Node current = null;
+        boolean fileExists = false;
+        ArrayList<Integer> filePointers = new ArrayList<>();;
+        for(int i = 0; i < nodes.length; i++){
+            if(nodes[i] == null){
+                continue;
+            }
+            if(nodes[i].data == file.charAt(0)){
+                filePointers.clear();
+                filePointers.add(i);
+                current = nodes[i];
+                while (current.next != -1){
+                    dataIndex++;
+                    if(nodes[current.next].data == file.charAt(dataIndex)){
+                        filePointers.add(current.next);
+                        current = nodes[current.next];
+                    }
+                }
+                if(filePointers.size() == file.length()){
+                    fileExists = true;
+                    break;
+                }
+            }
+
+        }
+        if(fileExists){
+            for(int i = 0; i < filePointers.size(); i++){
+                nodes[filePointers.get(i)] = null;
+            }
+        }else{
+            System.out.println("Arquivo não encontrado!");
+        }
+
     }
     public void seeFiles(){
         for(int i = 0; i < nodes.length; i++){
