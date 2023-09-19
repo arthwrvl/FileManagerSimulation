@@ -74,4 +74,13 @@ public class Disk {
             }
         }
     }
+    public void DebugFiles(){
+        for(int i = 0; i < nodes.length; i++){
+            if(nodes[i] != null){
+                System.out.println(i + " " + nodes[i].data + " pointing to: " + nodes[i].next);
+            }else{
+                System.out.println(i + " " + "-");
+            }
+        }
+    }
 }
