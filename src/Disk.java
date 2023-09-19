@@ -56,6 +56,7 @@ public class Disk {
 
         }
         if(fileExists){
+            freeSpace += file.length();
             for(int i = 0; i < filePointers.size(); i++){
                 nodes[filePointers.get(i)] = null;
             }
